@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nexion | Welcome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: #1a1c1e; color: white; font-family: 'Inter', sans-serif; text-align: center; padding-top: 100px; }
+        .nav-avatar { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #7289da; transition: 0.3s; cursor: pointer; }
+        .nav-avatar:hover { transform: scale(1.1); }
+        .btn { background: #7289da; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav style="position: absolute; top: 20px; right: 10%; ">
+        <% if (user) { %>
+            <a href="/dashboard"><img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" class="nav-avatar"></a>
+        <% } else { %>
+            <a href="/login" class="btn">Login</a>
+        <% } %>
+    </nav>
+    <h1>Nexion Advanced Dashboard</h1>
+    <p>Protecting <%= serverCount %> servers and <%= userCount %> users.</p>
+</body>
+</html>
